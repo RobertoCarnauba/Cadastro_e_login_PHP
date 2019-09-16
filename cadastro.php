@@ -1,0 +1,84 @@
+<?php
+
+$erro_usuario = isset($_GET['erro_usuario'])? $_GET['erro_usuario'] : 0;
+$erro_email = isset($_GET['erro_email'])? $_GET['erro_email'] : 0;
+
+?>
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>TestRoberto</title>
+  </head>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">My test!</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav" style="flex-flow: row-reverse;">
+        <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="index.php">voltar</a>
+          </li>
+        </ul>
+      </div>
+      </div>
+    </nav>
+  <body>
+   <div class="container">
+     <div class="row">
+      <div class="container">
+	      <div class="jumbotron" style="margin-top:10px; margin-top:10px;text-align: -webkit-center;";>
+        <div class="container">
+	    	<div class="col-md-6 col-sm-12" style="">
+          <h3>Cadastre-se.</h3>
+	    		<br />
+            <form method="post" action="cadastro_acesso.php" id="formCadastrarse">
+              <div class="form-group">
+                <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuário" >
+                  <?php
+                  if($erro_usuario){
+                    echo '<font style ="color: red;"> User já cadastrado</font>';
+                  }
+                ?> 
+              </div>
+
+              <div class="form-group">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" >
+                <?php
+                  if($erro_email){
+                    echo '<font style ="color: red;"> E-mail já cadastrado</font>';
+                  }
+                ?> 
+              </div>
+
+              <div class="form-group">
+                <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" >
+              </div>
+
+              <button class="btn btn-primary form-control" href="login.php">Inscreva-se</button>
+            </form>
+        </div>
+		   </div>
+		  </div>
+     </div>
+   </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="jquery.js"></script>
+    <script src="popper.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
